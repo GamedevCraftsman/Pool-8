@@ -1,76 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing.Design;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class CueMovement : MonoBehaviour
 {
-    [SerializeField] float speed = 0.1f;
-    //Touch touch;
-    //Quaternion rotationY;
-    bool dragging = false;
-    Rigidbody rb;
+    [SerializeField] float speed;
 
-    //void Update()
-    //{
-    //    if (Input.touchCount > 0)
-    //    {
-    //        touch = Input.GetTouch(0);
-    //        //if (touch.phase == TouchPhase.Began)
-    //        //{
+    Vector3 lastMousePosition;
+    Vector3 currentMousePosition;
 
-    //        //    transform.LookAt(touch.position, new Vector3(transform.rotation.x, -1, transform.rotation.z));
-    //        //    //transform.localRotation = Quaternion.Euler(new Vector3(transform.rotation.x, touch.position.y, transform.rotation.z));
-    //        //}
+    float xRotation = 0;
+    float zRotation = 0;
 
-    //        //this.transform.position = Camera.main.ScreenToWorldPoint(new Vector3 (touch.position.x, touch.position.y, -3));
-    //        //}
-    //        if (touch.phase == TouchPhase.Moved)
-    //        {
-    //        //Ray ray = Camera.main.ScreenPointToRay(touch.position);
-    //        //RaycastHit hit;
-
-    //        //if (Physics.Raycast(ray, out hit))
-    //        //{
-    //        //    navMeshAgent.destination = hit.point;
-    //        //}
-    //        ////transform.LookAt(touch.position, new Vector3(transform.rotation.x, -1, transform.rotation.z));
-    //        //transform.localRotation = Quaternion.Euler(new Vector3(transform.localRotation.x, touch.position.y * speed * Time.deltaTime, transform.localRotation.z)); 
-    //            Debug.Log("Move");
-    //        }
-    //    }
-    //}
-
-    private void Start()
+    void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        lastMousePosition = Input.mousePosition;
     }
 
-    private void OnMouseDrag()
+    void Update()
     {
-        dragging = true;
+        CalculationMousePosition();
+        CueRotate();
     }
 
-    private void Update()
+    void CueRotate()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            dragging = false;
-        }
+        transform.rotation = Quaternion.Euler(xRotation, (lastMousePosition.x + lastMousePosition.y) * speed, zRotation);
     }
 
-    private void FixedUpdate()
+    void CalculationMousePosition()
     {
-        if (dragging)
-        {
-            float x = Input.GetAxis("Mouse X") * speed * Time.deltaTime;
-            float y = Input.GetAxis("Mouse Y") * speed * Time.deltaTime;
-
-            rb.AddTorque(Vector3.down * x);
-            rb.AddTorque(Vector3.right * y);
-
-            Debug.Log("rotate");
-        }
+        currentMousePosition = Input.mousePosition;
+        lastMousePosition = currentMousePosition;
     }
 }
