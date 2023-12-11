@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CueBlow : MonoBehaviour
 {
-
+    [SerializeField] Transform ballPoint;
     [SerializeField] float power = 1.0f;
     
     Rigidbody cueRb;
@@ -11,11 +11,14 @@ public class CueBlow : MonoBehaviour
         cueRb = GetComponent<Rigidbody>();
     }
 
-    public void BlowButton()
+    void Update()
     {
-        Vector3 hitdirection = transform.forward;
-        hitdirection = new Vector3(hitdirection.x, 0, hitdirection.z).normalized;
-
-        cueRb.AddForce(hitdirection * power, ForceMode.Impulse);
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Blow!!!");
+            Vector3 hitDirection = transform.right;
+            hitDirection = new Vector3(hitDirection.x, 0, hitDirection.z).normalized;
+            cueRb.AddForce(hitDirection * power, ForceMode.Impulse);
+        }
     }
 }
