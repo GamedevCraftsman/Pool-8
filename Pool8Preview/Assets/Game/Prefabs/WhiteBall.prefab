@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 962880161030185183}
-  - component: {fileID: 3956373475192751497}
-  - component: {fileID: 2927441412195974887}
-  - component: {fileID: 5386050530081936568}
-  - component: {fileID: 6546575750734423874}
+  - component: {fileID: 6026848469231638735}
+  - component: {fileID: 4143493923252304483}
+  - component: {fileID: 7983229605054751473}
+  - component: {fileID: 6753584750644975162}
   m_Layer: 6
   m_Name: WhiteBall
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3956373475192751497
+--- !u!33 &6026848469231638735
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328684903146486218}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2927441412195974887
+--- !u!23 &4143493923252304483
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5386050530081936568
+--- !u!135 &7983229605054751473
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &6546575750734423874
+--- !u!54 &6753584750644975162
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
