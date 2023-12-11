@@ -26,7 +26,7 @@ public class CueMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(xRotation, (lastMousePosition.x + lastMousePosition.y) * speed, zRotation);
     }
 
-    void CalculationMousePosition()//calculation
+    void CalculationMousePosition()
     {
         currentMousePosition = Input.mousePosition;
         lastMousePosition = currentMousePosition;
