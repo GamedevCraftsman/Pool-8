@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 277471768656517744}
   m_Layer: 6
   m_Name: GreenBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8952725504856441049}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8be395088b81edd40b53d2cd1466d083, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
