@@ -5,15 +5,15 @@ public class BallStopper : MonoBehaviour
 {
     [SerializeField] GameObject[] ballRb;
     [SerializeField] GameObject cue;
-    [SerializeField] int numberOfBalls = 16;
-    [SerializeField] float minSpeed = 1;
+    [SerializeField] int numberOfBalls;
+    [SerializeField] float minSpeed;
     private void Start()
     {
         ballRb = GameObject.FindGameObjectsWithTag("Ball");
     }
     void Update()
     {
-        
+        BallSpeedCheckAndStop();
         // Show cue:
         //for (int i = 0; i < 16; i++)
         //{
@@ -29,17 +29,17 @@ public class BallStopper : MonoBehaviour
     void BallSpeedCheckAndStop ()
     {
         for (int i = 0; i < numberOfBalls; i++)
-        {
-            if (SpeedCheck(i))
+        {          
+            if (BallChecking(i))
             {
                 ballRb[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
             }
         }
     }
 
-    bool SpeedCheck(int i)
+   bool BallChecking(int i)
     {
         float speed = ballRb[i].GetComponent<Rigidbody>().velocity.magnitude; // find gameobject`s speed.
-        return speed < minSpeed ? true:false;
+        return speed < minSpeed;
     }
 }
