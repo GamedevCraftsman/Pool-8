@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 599285695}
   m_Layer: 0
   m_Name: Ball Stopper
-  m_TagString: Untagged
+  m_TagString: Ball Stopper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976994f3f15714b45b525b56b3738576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballRb: []
+  ballsRb: []
   cue: {fileID: 168127966}
   numberOfBalls: 16
   minSpeed: 1
@@ -1807,9 +1807,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1485128cf76cc469e33d95397ba8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPoint: {fileID: 1386604998}
-  power: 20
+  power: 15
   cue: {fileID: 168127966}
+  waitForSeconds: 4
+  ballPoint: {fileID: 1386604998}
+  mouseButton: 0
+  numberOfBalls: 16
 --- !u!4 &1497325041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6450629562971661802, guid: d3c0a90df05b539489b557d2765d84f6,

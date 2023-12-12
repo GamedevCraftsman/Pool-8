@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3105516707855899502}
   - component: {fileID: 6651181650021959603}
   - component: {fileID: 4704634197614581068}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: YellowBall
   m_TagString: Ball
   m_Icon: {fileID: 0}

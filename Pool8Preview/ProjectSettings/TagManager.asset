@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Ball Stopper
   layers:
   - Default
   - TransparentFX
@@ -12,8 +13,8 @@ TagManager:
   - Hole
   - Water
   - UI
+  - Cue
   - Ball
-  - 
   - 
   - 
   - 
