@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1777309669616247368}
   - component: {fileID: 6269857001763240663}
   - component: {fileID: 2079222850056164955}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: OrangeBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165848005459991582}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8be395088b81edd40b53d2cd1466d083, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

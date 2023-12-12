@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6981427148156619395}
   - component: {fileID: 6089669988977176342}
   - component: {fileID: 6076643010798758468}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: BlueBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4127490598194501900}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8be395088b81edd40b53d2cd1466d083, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
