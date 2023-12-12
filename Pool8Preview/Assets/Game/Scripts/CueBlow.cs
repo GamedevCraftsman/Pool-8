@@ -29,10 +29,11 @@ public class CueBlow : MonoBehaviour
 
     void BlowBall()
     {
-        HideCue();
+
         Vector3 hitDirection = ballPoint.transform.right;
         hitDirection = new Vector3(hitDirection.x, 0, hitDirection.z).normalized;
         cueRb.AddForce(hitDirection * power, ForceMode.Impulse);
+        HideCue();
     }
 
     void HideCue()

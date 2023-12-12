@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BallStopper : MonoBehaviour
@@ -33,12 +34,12 @@ public class BallStopper : MonoBehaviour
             {
                 checkBalls = true;
             }
-            else
+            else if (speed != stopSpeed)
             {
                 checkBalls = false;
                 break;
             }
-        }
+        }   
     }
 
     void ShowCue()

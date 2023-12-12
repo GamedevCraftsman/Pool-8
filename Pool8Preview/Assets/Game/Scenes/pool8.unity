@@ -816,10 +816,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976994f3f15714b45b525b56b3738576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballsRb: []
   cue: {fileID: 168127966}
-  numberOfBalls: 16
   minSpeed: 1
+  stopSpeed: 0
+  numberOfBalls: 16
+  ballsRb: []
 --- !u!1001 &636358204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1498,6 +1499,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BallPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 4153377363272063570, guid: 2653e1e81d689b149a6fc954aaa11333,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386587515533813412, guid: 2653e1e81d689b149a6fc954aaa11333,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1812,7 +1823,7 @@ MonoBehaviour:
   waitForSeconds: 4
   ballPoint: {fileID: 1386604998}
   mouseButton: 0
-  numberOfBalls: 16
+  stopSpeed: 0
 --- !u!4 &1497325041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6450629562971661802, guid: d3c0a90df05b539489b557d2765d84f6,
