@@ -1,10 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HitCheck : MonoBehaviour
 {
     [SerializeField] float secondsBeforeDelete;
+    [SerializeField] Text scoreText;
 
+    int score = 0;
     GameObject ballStopper;
     private void Start()
     {
@@ -14,6 +17,7 @@ public class HitCheck : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         RemoveBallFromEverywhere(other.gameObject);
+        AddScore();
         StartCoroutine(BallDestroy(other.gameObject));
     }
 
@@ -21,6 +25,12 @@ public class HitCheck : MonoBehaviour
     {
         ballStopper.GetComponent<BallStopper>().numberOfBalls--;
         ballStopper.GetComponent<BallStopper>().ballsRbList.Remove(ball);
+    }
+
+    void AddScore()
+    {
+        score++;
+        scoreText.text = score.ToString();
     }
 
     IEnumerator BallDestroy(GameObject ball)
