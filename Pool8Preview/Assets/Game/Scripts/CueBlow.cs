@@ -29,11 +29,10 @@ public class CueBlow : MonoBehaviour
 
     void BlowBall()
     {
-
+        HideCue();
         Vector3 hitDirection = ballPoint.transform.right;
         hitDirection = new Vector3(hitDirection.x, 0, hitDirection.z).normalized;
         cueRb.AddForce(hitDirection * power, ForceMode.Impulse);
-        HideCue();
     }
 
     void HideCue()
@@ -59,7 +58,7 @@ public class CueBlow : MonoBehaviour
 
     bool CheckBallSpeed(int i)
     {
-        return ballStopper.GetComponent<BallStopper>().ballsRb[i].GetComponent<Rigidbody>().velocity.magnitude != stopSpeed;
+        return ballStopper.GetComponent<BallStopper>().ballsRbList[i].GetComponent<Rigidbody>().velocity.magnitude != stopSpeed;
     }
 
     int NumberOfBalls()

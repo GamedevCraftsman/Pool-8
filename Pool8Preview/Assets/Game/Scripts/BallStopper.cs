@@ -1,5 +1,7 @@
-using System.Collections;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+
 
 public class BallStopper : MonoBehaviour
 {
@@ -7,13 +9,21 @@ public class BallStopper : MonoBehaviour
     [SerializeField] float minSpeed;
     [SerializeField] int stopSpeed;
 
+    public List<GameObject> ballsRbList = new List<GameObject>();
+
     public int numberOfBalls;
     public GameObject[] ballsRb;
-    bool checkBalls = false;
+    private bool cueShown = false;
+
     private void Start()
     {
         ballsRb = GameObject.FindGameObjectsWithTag("Ball");
+        for (int i = 0; i < ballsRb.Length; i++)
+        {
+            ballsRbList.Add(ballsRb[i]);
+        }
     }
+
     void Update()
     {
         CheckBallSpeedAndShowCue();
@@ -21,33 +31,36 @@ public class BallStopper : MonoBehaviour
 
     void CheckBallSpeedAndShowCue()
     {
-        CheckBallSpeed();
-        ShowCue();
+        if (CheckBallSpeed())
+        {
+            if (!cueShown)
+            {
+                ShowCue();
+                cueShown = true;
+            }
+        }
+        else
+        {
+            cueShown = false;
+        }
     }
 
-    void CheckBallSpeed()
+    bool CheckBallSpeed()
     {
         for (int i = 0; i < numberOfBalls; i++)
         {
-            float speed = ballsRb[i].GetComponent<Rigidbody>().velocity.magnitude;
-            if (speed == stopSpeed)
+            float speed = ballsRbList[i].GetComponent<Rigidbody>().velocity.magnitude;
+            if (Math.Abs(speed - stopSpeed) >= 0.01f)
             {
-                checkBalls = true;
+                return false;
             }
-            else if (speed != stopSpeed)
-            {
-                checkBalls = false;
-                break;
-            }
-        }   
+        }
+        return true;
     }
 
     void ShowCue()
     {
-        if (checkBalls)
-        {
-            cue.SetActive(true);
-        }
+        cue.SetActive(true);
     }
 
     public void BallSpeedCheckAndStop()
@@ -62,13 +75,13 @@ public class BallStopper : MonoBehaviour
     {
         if (BallChecking(i))
         {
-            ballsRb[i].GetComponent<Rigidbody>().Sleep();
+            ballsRbList[i].GetComponent<Rigidbody>().Sleep();
         }
     }
 
     bool BallChecking(int i)
     {
-        float speed = ballsRb[i].GetComponent<Rigidbody>().velocity.magnitude; // find gameobject`s speed.
+        float speed = ballsRbList[i].GetComponent<Rigidbody>().velocity.magnitude; // find gameobject`s speed.
         return speed < minSpeed;
     }
 }
