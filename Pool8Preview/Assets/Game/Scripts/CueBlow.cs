@@ -58,7 +58,7 @@ public class CueBlow : MonoBehaviour
 
     bool CheckBallSpeed(int i)
     {
-        return ballStopper.GetComponent<BallStopper>().ballsRb[i].GetComponent<Rigidbody>().velocity.magnitude != stopSpeed;
+        return ballStopper.GetComponent<BallStopper>().ballsRbList[i].GetComponent<Rigidbody>().velocity.magnitude != stopSpeed;
     }
 
     int NumberOfBalls()
