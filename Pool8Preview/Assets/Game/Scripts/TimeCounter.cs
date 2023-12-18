@@ -8,6 +8,6 @@ public class TimeCounter : MonoBehaviour
 
     void Update()
     {
-        timeText.text = Convert.ToInt32(Time.timeSinceLevelLoad) + " ñ.";
+        timeText.text = Convert.ToInt32(Time.timeSinceLevelLoad) + " c.";
     }
 }
