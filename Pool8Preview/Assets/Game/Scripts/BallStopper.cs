@@ -15,7 +15,7 @@ public class BallStopper : MonoBehaviour
     public GameObject[] ballsRb;
     private bool cueShown = false;
 
-    private void Start()
+    void Start()
     {
         ballsRb = GameObject.FindGameObjectsWithTag("Ball");
         for (int i = 0; i < ballsRb.Length; i++)

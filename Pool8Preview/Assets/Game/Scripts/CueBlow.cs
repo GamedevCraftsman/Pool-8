@@ -12,7 +12,7 @@ public class CueBlow : MonoBehaviour
 
     GameObject ballStopper;
     Rigidbody cueRb;
-    private void Start()
+    void Start()
     {
         cueRb = GetComponent<Rigidbody>();
         ballStopper = GameObject.FindGameObjectWithTag("Ball Stopper");
@@ -53,7 +53,6 @@ public class CueBlow : MonoBehaviour
                 ballStopper.GetComponent<BallStopper>().BallSpeedCheckAndStop();
             }
         }
-
     }
 
     bool CheckBallSpeed(int i)
